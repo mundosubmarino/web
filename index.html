@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Mundo Submarino</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+      text-align: center;
+      background-color: #f0f8ff;
+    }
+    h1 {
+      color: #87CEEB; /* Azul celeste */
+    }
+    #searchBox {
+      width: 300px;
+      padding: 10px;
+      font-size: 16px;
+      margin-top: 20px;
+    }
+    #results {
+      margin-top: 10px;
+      font-size: 18px;
+      color: #333;
+    }
+    img {
+      width: 100%;
+      max-width: 600px;
+      display: block;
+      margin: 0 auto;
+    }
+  </style>
+</head>
+<body>
+  <!-- Imagen en la parte superior -->
+  <img src="menu.jpg" alt="Menú">
+
+  <!-- Título en azul celeste -->
+  <h1>Mundo Submarino</h1>
+
+  <!-- Buscador con búsqueda en tiempo real -->
+  <input type="text" id="searchBox" placeholder="buscar especie...">
+  <div id="results"></div>
+
+  <script>
+    // Escucha el evento "input" para realizar la búsqueda en tiempo real
+    const searchBox = document.getElementById('searchBox');
+    const resultsDiv = document.getElementById('results');
+
+    searchBox.addEventListener('input', function() {
+      const query = searchBox.value.trim();
+      if (query !== "") {
+        // Aquí se podría integrar una llamada a una API o filtro de datos
+        resultsDiv.textContent = "Buscando: " + query;
+      } else {
+        resultsDiv.textContent = "";
+      }
+    });
+  </script>
+</body>
+</html>
