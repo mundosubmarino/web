@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Mundo Submarino - Acuarios</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <img src="menu.jpg" alt="Menú">
+
+  <!-- Botón para abrir el menú lateral con tres puntos verticales -->
+  <button id="menuButton">&#8942;</button>
+
+  <h1>Mundo Submarino</h1>
+  
+  <!-- Buscador (placeholder "buscar información...") -->
+  <input type="text" id="searchBox" placeholder="buscar información...">
+  <div id="results"></div>
+
+  <!-- Contenedor para las tarjetas (tema acuarios) -->
+  <div id="species-container"></div>
+
+  <div class="icon-bar">
+    <div class="icon-container">
+      <a href="acuarios.html">
+        <img src="acuario.jpg" alt="Acuario">
+      </a>
+    </div>
+    <div class="icon-container">
+      <a href="index.html">
+        <img src="pez.jpg" alt="Pez">
+      </a>
+    </div>
+    <div class="icon-container">
+      <a href="plantaacuatica.html">
+        <img src="alga.jpg" alt="Alga">
+      </a>
+    </div>
+  </div>
+  
+  <!-- Overlay gris semitransparente -->
+  <div id="overlay"></div>
+
+  <!-- Menú lateral -->
+  <div id="sideMenu">
+    <div id="closeMenu">&#x2190;</div>
+    <button id="themeToggle">modo: claro</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

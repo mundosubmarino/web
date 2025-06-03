@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Mundo Submarino - Index</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Imagen superior sin separación -->
+  <img src="menu.jpg" alt="Menú">
+
+  <!-- Botón para abrir el menú lateral con tres puntos verticales -->
+  <button id="menuButton">&#8942;</button>
+
+  <!-- Título en azul celeste (se mantiene azul en ambos modos) -->
+  <h1>Mundo Submarino</h1>
+
+  <!-- Buscador (placeholder "buscar especie...") -->
+  <input type="text" id="searchBox" placeholder="buscar especie...">
+  <div id="results"></div>
+
+  <!-- Contenedor para la generación dinámica de tarjetas de especies -->
+  <div id="species-container"></div>
+
+  <!-- Franja inferior de iconos -->
+  <div class="icon-bar">
+    <div class="icon-container">
+      <a href="acuarios.html">
+        <img src="acuario.jpg" alt="Acuario">
+      </a>
+    </div>
+    <div class="icon-container">
+      <a href="index.html">
+        <img src="pez.jpg" alt="Pez">
+      </a>
+    </div>
+    <div class="icon-container">
+      <a href="plantaacuatica.html">
+        <img src="alga.jpg" alt="Alga">
+      </a>
+    </div>
+  </div>
+
+  <!-- Overlay gris semitransparente (oculto por defecto) -->
+  <div id="overlay"></div>
+
+  <!-- Menú lateral (inicialmente oculto fuera de pantalla) -->
+  <div id="sideMenu">
+    <!-- Botón para cerrar el menú lateral (flecha negra) -->
+    <div id="closeMenu">&#x2190;</div>
+    <!-- Botón para cambiar el tema dentro del menú -->
+    <button id="themeToggle">modo: claro</button>
+    <!-- Otros elementos del menú pueden agregarse aquí -->
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

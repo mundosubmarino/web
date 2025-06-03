@@ -1,0 +1,236 @@
+/* Reset básico y estilos generales */
+html, body {
+  margin: 0;
+  padding: 0;
+  background-color: #ffffff;
+}
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  padding-bottom: 80px; /* Para que el contenido no quede tapado por la franja fija */
+}
+img {
+  width: 100%;
+  display: block;
+}
+h1 {
+  color: #87CEEB;  /* Siempre azul celeste, sin importar el modo */
+  margin: 20px 0;
+}
+#searchBox {
+  width: 300px;
+  padding: 10px;
+  font-size: 16px;
+  margin-top: 20px;
+}
+#results {
+  margin-top: 10px;
+  font-size: 18px;
+  color: #333;
+}
+
+/* Franja inferior de iconos */
+.icon-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 50px;
+  background-color: #ffffff;
+  box-shadow: 0px -2px 5px rgba(0, 0, 0, 0.3);
+  display: flex;
+  align-items: center;
+  z-index: 100;
+}
+.icon-container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.icon-bar img {
+  width: 40px;
+  height: auto;
+  transition: transform 0.3s;
+}
+.icon-bar img:hover {
+  transform: scale(1.05);
+}
+
+/* Tarjetas de especies */
+#species-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px;
+}
+.species-card {
+  display: flex;
+  align-items: center;  /* Alinea la imagen y el contenido verticalmente */
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  overflow: hidden;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+.card-img {
+  flex-shrink: 0;
+}
+.card-img img {
+  width: 150px;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+.card-info {
+  padding: 15px;
+  text-align: left;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.card-info h2 {
+  margin-top: 0;
+  margin-bottom: 10px;
+  font-size: 1.5em;
+}
+.card-info p {
+  margin-bottom: 10px;
+  flex-grow: 1;
+}
+.leer-mas {
+  background-color: #007BFF;
+  color: #fff;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 3px;
+  font-size: 1em;
+  text-align: center;
+  width: max-content;
+}
+
+/* ------------------- NUEVOS ESTILOS PARA EL MENÚ LATERAL ------------------- */
+
+/* Botón para abrir el menú lateral (cuadrado, azul, tres puntos verticales) */
+#menuButton {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  width: 40px;
+  height: 40px;
+  background-color: #007BFF;
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  font-size: 24px;
+  cursor: pointer;
+  z-index: 300;
+}
+
+/* Overlay gris semitransparente */
+#overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(128, 128, 128, 0.6);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease;
+  z-index: 250;
+}
+#overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Menú lateral que se desliza desde la derecha */
+#sideMenu {
+  position: fixed;
+  top: 0;
+  right: -50%;  /* Oculto inicialmente */
+  width: 50%;
+  height: 100%;
+  background-color: #fff;
+  box-shadow: -2px 0 5px rgba(0,0,0,0.3);
+  transition: right 0.3s ease;
+  z-index: 300;
+}
+#sideMenu.active {
+  right: 0;
+}
+
+/* Botón para cerrar el menú lateral (flecha negra) */
+#closeMenu {
+  position: absolute;
+  top: 20px;
+  left: 10px;
+  font-size: 24px;
+  color: #000;
+  cursor: pointer;
+}
+
+/* Botón para cambiar el tema dentro del menú lateral */
+/* En modo claro: fondo blanco, ancho fijo, borde y texto negros */
+#sideMenu #themeToggle {
+  display: block;
+  margin: 60px auto; /* Centrado y con margen superior */
+  width: 140px;      /* Ancho fijo para evitar reflujo por cambio de texto */
+  background-color: #ffffff;
+  border: 2px solid #000;
+  border-radius: 5px;
+  color: #000;
+  font-size: 14px;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+/* ------------------- ESTILOS PARA EL MODO OSCURO ------------------- */
+
+body.dark-mode {
+  background-color: #121212;
+  color: #e0e0e0;
+}
+/* Mantener el título en azul celeste siempre */
+body.dark-mode h1 {
+  color: #87CEEB;
+}
+body.dark-mode input {
+  background-color: #333;
+  color: #fff;
+  border: 1px solid #444;
+}
+body.dark-mode #results {
+  color: #fff;
+}
+body.dark-mode .icon-bar {
+  background-color: #222;
+  box-shadow: 0 -2px 5px rgba(255, 255, 255, 0.1);
+}
+/* Los botones de abrir menú se mantienen iguales en ambos modos */
+body.dark-mode #menuButton {
+  background-color: #007BFF;
+}
+/* En modo oscuro, el menú lateral cambia de fondo */
+body.dark-mode #sideMenu {
+  background-color: #222;
+}
+/* En modo oscuro, el botón para cambiar el tema ahora tendrá:
+   - Fondo: el mismo que el menú (#222) (no un negro muy fuerte)
+   - Borde: 2px sólido blanco
+   - Texto: blanco
+   Además, se conserva el ancho fijo para evitar cualquier movimiento. */
+body.dark-mode #sideMenu #themeToggle {
+  background-color: #222;
+  border: 2px solid #fff;
+  color: #fff;
+  width: 140px;
+}
+body.dark-mode #closeMenu {
+  color: #fff;
+}
+body.dark-mode .species-card {
+  background-color: #1e1e1e;
+}
